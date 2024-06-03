@@ -611,62 +611,128 @@ update.addActionListener(new ActionListener() {
     }
 });
         add.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Validate fields
-                JTextField[] fields = {employeNumber, lasName, firsName, birhday, phonNo, ssNo, philHealtNo, tinN, pagibigN, stat, post, supvsr, basic, rice, phone, clothing, grossSM, hourly};
-                for (JTextField field : fields) {
-                    if (field.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(EmployeeTable.this, "Please fill in all fields.", "Empty Fields", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
-                    if (field.getText().contains(",")) {
-                        JOptionPane.showMessageDialog(EmployeeTable.this, "Comma (',') cannot be used in fields.", "Invalid Character", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
-                }
-                if (adress.getText().isEmpty() || adress.getText().contains(",")) {
-                    JOptionPane.showMessageDialog(EmployeeTable.this, "Please fill in the address field without commas.", "Invalid Character", JOptionPane.ERROR_MESSAGE);
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Check for empty fields
+        if (employeNumber.getText().isEmpty() || lasName.getText().isEmpty() || firsName.getText().isEmpty() ||
+                birhday.getText().isEmpty() || adress.getText().isEmpty() || phonNo.getText().isEmpty() ||
+                ssNo.getText().isEmpty() || philHealtNo.getText().isEmpty() || tinN.getText().isEmpty() ||
+                pagibigN.getText().isEmpty() || stat.getText().isEmpty() || post.getText().isEmpty() ||
+                supvsr.getText().isEmpty() || basic.getText().isEmpty() || rice.getText().isEmpty() ||
+                phone.getText().isEmpty() || clothing.getText().isEmpty() || grossSM.getText().isEmpty() ||
+                hourly.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(EmployeeTable.this, "Please fill in all fields.", "Empty Fields", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Check for commas in text fields
+        if (employeNumber.getText().contains(",") || lasName.getText().contains(",") || firsName.getText().contains(",") ||
+                birhday.getText().contains(",") || adress.getText().contains(",") || phonNo.getText().contains(",") ||
+                ssNo.getText().contains(",") || philHealtNo.getText().contains(",") || tinN.getText().contains(",") ||
+                pagibigN.getText().contains(",") || stat.getText().contains(",") || post.getText().contains(",") ||
+                supvsr.getText().contains(",") || basic.getText().contains(",") || rice.getText().contains(",") ||
+                phone.getText().contains(",") || clothing.getText().contains(",") || grossSM.getText().contains(",") ||
+                hourly.getText().contains(",")) {
+            JOptionPane.showMessageDialog(EmployeeTable.this, "Comma (',') cannot be used in fields.", "Invalid Character", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Check for duplicate values in Employee Number, SSS Number, Philhealth Number, TIN Number, Pag-ibig Number
+        String csvFile = "motorPHEmployeeList.csv";
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] rowData = line.split(",");
+                if (employeNumber.getText().equals(rowData[0].trim()) ||
+                    ssNo.getText().equals(rowData[6].trim()) ||
+                    philHealtNo.getText().equals(rowData[7].trim()) ||
+                    tinN.getText().equals(rowData[8].trim()) ||
+                    pagibigN.getText().equals(rowData[9].trim())) {
+                    JOptionPane.showMessageDialog(EmployeeTable.this, "Duplicate entry found.", "Duplicate Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-
-                // Check for duplicate values
-                Set<String> uniqueValues = new HashSet<>();
-                String[] uniqueColumns = {employeNumber.getText(), ssNo.getText(), philHealtNo.getText(), tinN.getText(), pagibigN.getText()};
-                for (String columnValue : uniqueColumns) {
-                    if (!uniqueValues.add(columnValue)) {
-                        JOptionPane.showMessageDialog(EmployeeTable.this, "Duplicate value found: " + columnValue, "Duplicate Entry", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
-                }
-
-                // Add to motorPHEmployeeList.csv
-                try (BufferedWriter writer = new BufferedWriter(new FileWriter("motorPHEmployeeList.csv", true))) {
-                    writer.write(String.join(",", employeNumber.getText(), lasName.getText(), firsName.getText(), birhday.getText(), adress.getText(),
-                            phonNo.getText(), ssNo.getText(), philHealtNo.getText(), tinN.getText(), pagibigN.getText(), stat.getText(), post.getText(),
-                            supvsr.getText(), basic.getText(), rice.getText(), phone.getText(), clothing.getText(), grossSM.getText(), hourly.getText()));
-                    writer.newLine();
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(EmployeeTable.this, "Failed to add employee data.", "Error", JOptionPane.ERROR_MESSAGE);
-                    ex.printStackTrace();
-                    return;
-                }
-
-                // Update password.csv
-                try (BufferedWriter writer = new BufferedWriter(new FileWriter("password.csv", true))) {
-                    writer.write(employeNumber.getText() + "," + lasName.getText() + "," + "motorPH" + employeNumber.getText());
-                    writer.newLine();
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(EmployeeTable.this, "Failed to update password data.", "Error", JOptionPane.ERROR_MESSAGE);
-                    ex.printStackTrace();
-                    return;
-                }
-
-                // Refresh the table
-                model.addRow(new Object[]{employeNumber.getText(), lasName.getText(), firsName.getText(), ssNo.getText(), philHealtNo.getText(), tinN.getText(), pagibigN.getText()});
-                JOptionPane.showMessageDialog(EmployeeTable.this, "Employee data added successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(EmployeeTable.this, "Failed to check for duplicates.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Append new data to the CSV
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile, true))) {
+            writer.write(String.join(",",
+                employeNumber.getText(),
+                lasName.getText(),
+                firsName.getText(),
+                birhday.getText(),
+                adress.getText(),
+                phonNo.getText(),
+                ssNo.getText(),
+                philHealtNo.getText(),
+                tinN.getText(),
+                pagibigN.getText(),
+                stat.getText(),
+                post.getText(),
+                supvsr.getText(),
+                basic.getText(),
+                rice.getText(),
+                phone.getText(),
+                clothing.getText(),
+                grossSM.getText(),
+                hourly.getText()));
+            writer.newLine();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(EmployeeTable.this, "Failed to add employee data.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Update password.csv
+        String passwordFile = "password.csv";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(passwordFile, true))) {
+            writer.write(employeNumber.getText() + "," + lasName.getText() + "," + "motorPH" + employeNumber.getText());
+            writer.newLine();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(EmployeeTable.this, "Failed to update password data.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Refresh the JTable to show the new data (optional)
+        model.addRow(new Object[]{
+            employeNumber.getText(),
+            lasName.getText(),
+            firsName.getText(),
+            ssNo.getText(),
+            philHealtNo.getText(),
+            tinN.getText(),
+            pagibigN.getText()
         });
+
+        // Clear the text fields after adding
+        employeNumber.setText("");
+        lasName.setText("");
+        firsName.setText("");
+        birhday.setText("");
+        adress.setText("");
+        phonNo.setText("");
+        ssNo.setText("");
+        philHealtNo.setText("");
+        tinN.setText("");
+        pagibigN.setText("");
+        stat.setText("");
+        post.setText("");
+        supvsr.setText("");
+        basic.setText("");
+        rice.setText("");
+        phone.setText("");
+        clothing.setText("");
+        grossSM.setText("");
+        hourly.setText("");
+
+        JOptionPane.showMessageDialog(EmployeeTable.this, "Employee added successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+    }
+});
      
         bodyP.add(scrollPane);
         bodyP.add(tableNote); // Add tableNote to the bodyP panel
