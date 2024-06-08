@@ -610,6 +610,14 @@ update.addActionListener(new ActionListener() {
     
     }
 });
+        calculate.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Launch the ComputeSalary class here
+                ComputeSalary computeSalaryFrame = new ComputeSalary();
+            }
+        });
+        
         add.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {

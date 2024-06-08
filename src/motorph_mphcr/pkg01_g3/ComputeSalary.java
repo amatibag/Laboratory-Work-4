@@ -38,10 +38,10 @@ ComputeSalary () {
         headerLabel.setBounds(0, 0, 633, 130); // sets the position of the entire label on the frame
         
         JLabel employeeDetails = new JLabel(); // creates a label
-        employeeDetails.setText("Employee Number and Name Goes here"); // sets text for the label
-        employeeDetails.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        employeeDetails.setText("   Employee Number and Name Goes here   "); // sets text for the label
+        employeeDetails.setForeground(new Color(255, 255, 255, 255)); // sets the font color of the text
         employeeDetails.setFont(new Font("Arial", Font.BOLD, 15)); // sets the font of the text
-        employeeDetails.setBackground(new Color(255, 255, 255, 200)); // sets the background color of the label
+        employeeDetails.setBackground(new Color(0x0E3171)); // sets the background color of the label
         employeeDetails.setOpaque(true); // this will display background color
         employeeDetails.setVerticalAlignment(JLabel.BOTTOM); // sets the Vertical position of the label (icon + Text)
         employeeDetails.setHorizontalAlignment(JLabel.CENTER); // sets the Horizontal position of the label (icon + Text)
@@ -50,7 +50,7 @@ ComputeSalary () {
         
         
         JPanel bodyPanel = new JPanel(); // creates a panel for the dropdown list
-        bodyPanel.setBackground(new Color(255, 255, 255, 200)); // sets the background color of the panel
+        bodyPanel.setBackground(new Color(255, 255, 255, 255)); // sets the background color of the panel
         bodyPanel.setBounds(10, 130, 600, 825); // sets the position of the panel on the frame
         bodyPanel.add(employeeDetails); // add drop-down to the panel
         
