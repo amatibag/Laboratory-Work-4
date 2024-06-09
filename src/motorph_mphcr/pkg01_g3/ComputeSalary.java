@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -121,19 +122,199 @@ public class ComputeSalary extends JFrame{
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.LINE_START;
         monthYrPanel.add(yr, gbc);
+        
+        // Retrieve non-taxable benefits from rowData
+        String riceSubsidy = rowData[14]; // 15th column
+        String phoneAllowance = rowData[15]; // 16th column
+        String clothingAllowance = rowData[16]; // 17th column
+        
+        //tab1 content:
+        JLabel header1 = new JLabel("<html><u>Calculate salary based on Monthly Rate:</u></html>");
+        header1.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        header1.setFont(new Font("Arial", Font.ITALIC, 12)); // sets the font of the text
+        header1.setOpaque(true); // this will display background color
+        header1.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        header1.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        header1.setBounds(5, 5, 350, 20); // sets the position of the entire label on the frame
+        
+        JLabel adjEarnings1 = new JLabel("Enter amount of adjustment on Taxable Earnings:"); // creates a label to be added inside frameTitleP panel
+        adjEarnings1.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        adjEarnings1.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        adjEarnings1.setOpaque(true); // this will display background color
+        adjEarnings1.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        adjEarnings1.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        adjEarnings1.setBounds(5, 25, 350, 20); // sets the position of the entire label on the frame
+        
+        JTextField adjEarning1 = new JTextField();
+        adjEarning1.setBounds(360, 25, 75, 20);
+        
+        JLabel oThours1 = new JLabel("Enter overtime hours if applicable: "); // creates a label to be added inside frameTitleP panel
+        oThours1.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        oThours1.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        oThours1.setOpaque(true); // this will display background color
+        oThours1.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        oThours1.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        oThours1.setBounds(5, 50, 350, 20); // sets the position of the entire label on the frame
+        
+        JTextField otDur1 = new JTextField();
+        otDur1.setBounds(360, 50, 75, 20);
+       
+        JLabel otRate1 = new JLabel("Enter overtime rate in decimal form (sample 1.25 for 125%):"); // creates a label to be added inside frameTitleP panel
+        otRate1.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        otRate1.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        otRate1.setOpaque(true); // this will display background color
+        otRate1.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        otRate1.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        otRate1.setBounds(5, 75, 350, 20); // sets the position of the entire label on the frame
+
+        JTextField otPay1 = new JTextField();
+        otPay1.setBounds(360, 75, 75, 20);
+        
+        
+        
+        // Create the JCheckBox with the retrieved benefits
+       JCheckBox benefits1 = new JCheckBox("<html>" +
+             "<style>" +
+            "body {margin: 0; padding: 0; font-size: 9px; font-family: Arial;}" +
+            "table {line-height: 1.0; margin: 0; padding: 0;}" +
+            "td {padding: 0; margin: 0; font-size: 9px; font-family: Arial;}" +
+            "</style>" +
+            "<body>" +
+            "Pay non-taxable benefits:<br>" +
+            "<table>" +
+            "<tr><td style='padding-left: 15px;'>Rice Subsidy:</td><td style='padding-left: 15px;'>" + riceSubsidy + "</td></tr>" +
+            "<tr><td style='padding-left: 15px;'>Phone Allowance:</td><td style='padding-left: 15px;'>" + phoneAllowance + "</td></tr>" +
+            "<tr><td style='padding-left: 15px;'>Clothing Allowance:</td><td style='padding-left: 15px;'>" + clothingAllowance + "</td></tr>" +
+            "</table>" +
+            "</body>" +
+            "</html>");
+        benefits1.setBounds(5, 100, 350, 80);
+        
+        JLabel adjBen1 = new JLabel("Enter amount of adjustment on Non-Taxable Earnings:"); // creates a label to be added inside frameTitleP panel
+        adjBen1.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        adjBen1.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        adjBen1.setOpaque(true); // this will display background color
+        adjBen1.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        adjBen1.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        adjBen1.setBounds(5, 180, 350, 20); // sets the position of the entire label on the frame
+        
+        JTextField adjBene1 = new JTextField();
+        adjBene1.setBounds(360, 180, 75, 20);
+        
+        JButton calculate1 = new JButton("Calculate");
+        calculate1.setBounds(225, 215, 150, 20);
+        
+         //tab2 content:
+         
+        JLabel header2 = new JLabel("<html><u>Calculate salary based on Semi-Monthly Rate:</u></html>");
+        header2.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        header2.setFont(new Font("Arial", Font.ITALIC, 12)); // sets the font of the text
+        header2.setOpaque(true); // this will display background color
+        header2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        header2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        header2.setBounds(5, 5, 350, 20); // sets the position of the entire label on the frame
+        
+        JLabel adjEarnings2 = new JLabel("Enter amount of adjustment on Taxable Earnings:"); // creates a label to be added inside frameTitleP panel
+        adjEarnings2.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        adjEarnings2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        adjEarnings2.setOpaque(true); // this will display background color
+        adjEarnings2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        adjEarnings2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        adjEarnings2.setBounds(5, 25, 350, 20); // sets the position of the entire label on the frame
+        
+        JTextField adjEarning2 = new JTextField();
+        adjEarning2.setBounds(360, 25, 75, 20);
+        
+        JLabel oThours2 = new JLabel("Enter overtime hours if applicable: "); // creates a label to be added inside frameTitleP panel
+        oThours2.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        oThours2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        oThours2.setOpaque(true); // this will display background color
+        oThours2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        oThours2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        oThours2.setBounds(5, 50, 350, 20); // sets the position of the entire label on the frame
+        
+        JTextField otDur2 = new JTextField();
+        otDur2.setBounds(360, 50, 75, 20);
+       
+        JLabel otRate2 = new JLabel("Enter overtime rate in decimal form (sample 1.25 for 125%):"); // creates a label to be added inside frameTitleP panel
+        otRate2.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        otRate2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        otRate2.setOpaque(true); // this will display background color
+        otRate2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        otRate2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        otRate2.setBounds(5, 75, 350, 20); // sets the position of the entire label on the frame
+
+        JTextField otPay2 = new JTextField();
+        otPay2.setBounds(360, 75, 75, 20);
+        
+        
+        
+        // Create the JCheckBox with the retrieved benefits
+       JCheckBox benefits2 = new JCheckBox("<html>" +
+             "<style>" +
+            "body {margin: 0; padding: 0; font-size: 9px; font-family: Arial;}" +
+            "table {line-height: 1.0; margin: 0; padding: 0;}" +
+            "td {padding: 0; margin: 0; font-size: 9px; font-family: Arial;}" +
+            "</style>" +
+            "<body>" +
+            "Pay non-taxable benefits:<br>" +
+            "<table>" +
+            "<tr><td style='padding-left: 15px;'>Rice Subsidy:</td><td style='padding-left: 15px;'>" + riceSubsidy + "</td></tr>" +
+            "<tr><td style='padding-left: 15px;'>Phone Allowance:</td><td style='padding-left: 15px;'>" + phoneAllowance + "</td></tr>" +
+            "<tr><td style='padding-left: 15px;'>Clothing Allowance:</td><td style='padding-left: 15px;'>" + clothingAllowance + "</td></tr>" +
+            "</table>" +
+            "</body>" +
+            "</html>");
+        benefits2.setBounds(5, 100, 350, 80);
+        
+        JLabel adjBen2 = new JLabel("Enter amount of adjustment on Non-Taxable Earnings:"); // creates a label to be added inside frameTitleP panel
+        adjBen2.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        adjBen2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        adjBen2.setOpaque(true); // this will display background color
+        adjBen2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        adjBen2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        adjBen2.setBounds(5, 180, 350, 20); // sets the position of the entire label on the frame
+        
+        JTextField adjBene2 = new JTextField();
+        adjBene2.setBounds(360, 180, 75, 20);
+        
+        JButton calculate2 = new JButton("Calculate");
+        calculate2.setBounds(225, 215, 150, 20);
+        
+        
 
         // Create a tabbed pane
         JTabbedPane tabbedPane = new JTabbedPane();
 
         // Create panels for each tab
-        JPanel tab1 = new JPanel(new BorderLayout());
-        tab1.add(new JLabel("Content for Pay with Monthly Rate"), BorderLayout.NORTH);
+        JPanel tab1 = new JPanel(null);
+        tab1.add(header1);
+        tab1.add(adjEarnings1);
+        tab1.add(adjEarning1);
+        tab1.add(oThours1);
+        tab1.add(otDur1);
+        tab1.add(otRate1);
+        tab1.add(otPay1);
+        tab1.add(benefits1);
+        tab1.add(adjBen1);
+        tab1.add(adjBene1);
+        tab1.add(calculate1);
 
-        JPanel tab2 = new JPanel();
-        tab2.add(new JLabel("Content for Pay with Semi-Monthly Rate"));
+        JPanel tab2 = new JPanel(null);
+        tab2.add(header2);
+        tab2.add(adjEarnings2);
+        tab2.add(adjEarning2);
+        tab2.add(oThours2);
+        tab2.add(otDur2);
+        tab2.add(otRate2);
+        tab2.add(otPay2);
+        tab2.add(benefits2);
+        tab2.add(adjBen2);
+        tab2.add(adjBene2);
+        tab2.add(calculate2);
 
         JPanel tab3 = new JPanel();
-        tab3.add(new JLabel("Content for Pay with Hourly Rate"));
+        tab3.add(new JLabel("Calculate Based on Hourly Rate"));
 
         // Add tabs to the tabbed pane
         tabbedPane.addTab("Pay with Monthly Rate", tab1);
