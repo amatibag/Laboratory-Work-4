@@ -610,13 +610,43 @@ update.addActionListener(new ActionListener() {
     
     }
 });
+     
         calculate.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Launch the ComputeSalary class here
-                ComputeSalary computeSalaryFrame = new ComputeSalary();
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        int row = table.getSelectedRow();
+        if (row != -1) { // Check if a row is selected
+            String selectedEmployeeNumber = (String) table.getValueAt(row, 0); // Assuming the employee number is in the first column
+            
+            // Read data from the CSV file
+            try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+                String line;
+                // Skip headers
+                br.readLine();
+                // Read data and find the row with the selected employee number
+                while ((line = br.readLine()) != null) {
+                    String[] rowData = line.split(",");
+                    if (selectedEmployeeNumber.equals(rowData[0].trim())) { // Assuming employee number is in the first column
+                        // Check if rowData contains all necessary fields
+                        if (rowData.length >= 19) {
+                            // Pass rowData to ComputeSalary constructor
+                            ComputeSalary computeSalaryFrame = new ComputeSalary(rowData);
+                            // Close the EmployeeTable frame
+                            dispose();
+                        } else {
+                            System.out.println("Error: Insufficient data in CSV row.");
+                        }
+                        break; // No need to continue reading the file
+                    }
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
             }
-        });
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select an employee from the table.");
+        }
+    }
+});
         
         add.addActionListener(new ActionListener() {
     @Override
@@ -773,6 +803,8 @@ update.addActionListener(new ActionListener() {
         this.add(bodyP); // adds the panel on the frame
         this.add(headerLabel); // adds the panel on the frame
     }
+    
+    
 
     // Custom header renderer class
     static class HeaderRenderer extends JButton implements TableCellRenderer {
