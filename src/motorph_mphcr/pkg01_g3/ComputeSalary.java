@@ -427,6 +427,7 @@ public class ComputeSalary extends JFrame{
         
         JTextField adjEarning2 = new JTextField();
         adjEarning2.setBounds(360, 25, 75, 20);
+        adjEarning2.setText("0");
         
         JLabel oThours2 = new JLabel("Enter overtime hours if applicable: "); // creates a label to be added inside frameTitleP panel
         oThours2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -438,6 +439,7 @@ public class ComputeSalary extends JFrame{
         
         JTextField otDur2 = new JTextField();
         otDur2.setBounds(360, 50, 75, 20);
+        otDur2.setText("0");
        
         JLabel otRate2 = new JLabel("Enter overtime rate in decimal form (sample 1.25 for 125%):"); // creates a label to be added inside frameTitleP panel
         otRate2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -449,6 +451,7 @@ public class ComputeSalary extends JFrame{
 
         JTextField otPay2 = new JTextField();
         otPay2.setBounds(360, 75, 75, 20);
+        otPay2.setText("0");
         
         
         
@@ -480,6 +483,7 @@ public class ComputeSalary extends JFrame{
         
         JTextField adjBene2 = new JTextField();
         adjBene2.setBounds(360, 180, 75, 20);
+        adjBene2.setText("0");
         
         JButton calculate2 = new JButton("Calculate");
         calculate2.setBounds(225, 215, 150, 20);
@@ -492,7 +496,7 @@ public class ComputeSalary extends JFrame{
         grossTaxable2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         grossTaxable2.setBounds(5, 495, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel grossTaxabl2 = new JLabel("Gross"); // creates a label to be added inside frameTitleP panel
+        JLabel grossTaxabl2 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         grossTaxabl2.setForeground(new Color(0x0E3171)); // sets the font color of the text
         grossTaxabl2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         grossTaxabl2.setOpaque(true); // this will display background color
@@ -508,7 +512,7 @@ public class ComputeSalary extends JFrame{
         adjTaxable2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         adjTaxable2.setBounds(5, 515, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel adjTaxabl2 = new JLabel("G Adj"); // creates a label to be added inside frameTitleP panel
+        JLabel adjTaxabl2 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         adjTaxabl2.setForeground(new Color(0x0E3171)); // sets the font color of the text
         adjTaxabl2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         adjTaxabl2.setOpaque(true); // this will display background color
@@ -524,7 +528,7 @@ public class ComputeSalary extends JFrame{
         sss2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         sss2.setBounds(5, 535, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel sssDed2 = new JLabel("SSS Ded"); // creates a label to be added inside frameTitleP panel
+        JLabel sssDed2 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         sssDed2.setForeground(new Color(0x0E3171)); // sets the font color of the text
         sssDed2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         sssDed2.setOpaque(true); // this will display background color
@@ -540,7 +544,7 @@ public class ComputeSalary extends JFrame{
         philH2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         philH2.setBounds(5, 555, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel philDed2 = new JLabel("Phil Ded"); // creates a label to be added inside frameTitleP panel
+        JLabel philDed2 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         philDed2.setForeground(new Color(0x0E3171)); // sets the font color of the text
         philDed2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         philDed2.setOpaque(true); // this will display background color
@@ -556,7 +560,7 @@ public class ComputeSalary extends JFrame{
         pagIbg2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         pagIbg2.setBounds(5, 575, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel pagIbgDed2 = new JLabel("PagIbgDed Ded"); // creates a label to be added inside frameTitleP panel
+        JLabel pagIbgDed2 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         pagIbgDed2.setForeground(new Color(0x0E3171)); // sets the font color of the text
         pagIbgDed2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         pagIbgDed2.setOpaque(true); // this will display background color
@@ -572,7 +576,7 @@ public class ComputeSalary extends JFrame{
         withholding2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         withholding2.setBounds(5, 595, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel withholdingDed2 = new JLabel("Witholding Tax Ded"); // creates a label to be added inside frameTitleP panel
+        JLabel withholdingDed2 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         withholdingDed2.setForeground(new Color(0x0E3171)); // sets the font color of the text
         withholdingDed2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         withholdingDed2.setOpaque(true); // this will display background color
@@ -588,7 +592,7 @@ public class ComputeSalary extends JFrame{
         benefitsL2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         benefitsL2.setBounds(310, 495, 210, 15); // sets the position of the entire label on the frame
         
-        JLabel benefitsPay2 = new JLabel("Bene"); // creates a label to be added inside frameTitleP panel
+        JLabel benefitsPay2 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         benefitsPay2.setForeground(new Color(0x0E3171)); // sets the font color of the text
         benefitsPay2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         benefitsPay2.setOpaque(true); // this will display background color
@@ -604,7 +608,7 @@ public class ComputeSalary extends JFrame{
         benefitsAdjL2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         benefitsAdjL2.setBounds(310, 515, 210, 15); // sets the position of the entire label on the frame
         
-        JLabel benefitsAdjDed2 = new JLabel("Bene Adj"); // creates a label to be added inside frameTitleP panel
+        JLabel benefitsAdjDed2 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         benefitsAdjDed2.setForeground(new Color(0x0E3171)); // sets the font color of the text
         benefitsAdjDed2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         benefitsAdjDed2.setOpaque(true); // this will display background color
@@ -620,7 +624,7 @@ public class ComputeSalary extends JFrame{
         netPayL2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         netPayL2.setBounds(310, 555, 210, 15); // sets the position of the entire label on the frame
         
-        JLabel netPay2 = new JLabel("Net"); // creates a label to be added inside frameTitleP panel
+        JLabel netPay2 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         netPay2.setForeground(new Color(0x0E3171)); // sets the font color of the text
         netPay2.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         netPay2.setOpaque(true); // this will display background color
@@ -666,9 +670,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li1 = new JTextField();
         li1.setBounds(108, 54, 45, 17);
+        li1.setText("00:00");
         
         JTextField lo1 = new JTextField();
         lo1.setBounds(160, 54, 45, 17);
+        lo1.setText("00:00");
         
         JLabel day2 = new JLabel("Day  2 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -680,9 +686,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li2 = new JTextField();
         li2.setBounds(108, 74, 45, 17);
+        li2.setText("00:00");
         
         JTextField lo2 = new JTextField();
         lo2.setBounds(160, 74, 45, 17);
+        lo2.setText("00:00");
         
         JLabel day3 = new JLabel("Day  3 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -694,9 +702,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li3 = new JTextField();
         li3.setBounds(108, 94, 45, 17);
+        li3.setText("00:00");
         
         JTextField lo3 = new JTextField();
         lo3.setBounds(160, 94, 45, 17);
+        lo3.setText("00:00");
         
         JLabel day4 = new JLabel("Day  4 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day4.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -708,9 +718,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li4 = new JTextField();
         li4.setBounds(108, 114, 45, 17);
+        li4.setText("00:00");
         
         JTextField lo4 = new JTextField();
         lo4.setBounds(160, 114, 45, 17);
+        lo4.setText("00:00");
         
         JLabel day5 = new JLabel("Day  5 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day5.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -722,9 +734,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li5 = new JTextField();
         li5.setBounds(108, 134, 45, 17);
+        li5.setText("00:00");
         
         JTextField lo5 = new JTextField();
         lo5.setBounds(160, 134, 45, 17);
+        lo5.setText("00:00");
         
         JLabel day6 = new JLabel("Day  6 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day6.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -736,9 +750,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li6 = new JTextField();
         li6.setBounds(108, 154, 45, 17);
+        li6.setText("00:00");
         
         JTextField lo6 = new JTextField();
         lo6.setBounds(160, 154, 45, 17);
+        lo6.setText("00:00");
         
         JLabel day7 = new JLabel("Day  7 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day7.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -750,9 +766,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li7 = new JTextField();
         li7.setBounds(108, 174, 45, 17);
+        li7.setText("00:00");
         
         JTextField lo7 = new JTextField();
         lo7.setBounds(160, 174, 45, 17);
+        lo7.setText("00:00");
         
         JLabel day8 = new JLabel("Day  8 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day8.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -764,9 +782,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li8 = new JTextField();
         li8.setBounds(108, 194, 45, 17);
+        li8.setText("00:00");
         
         JTextField lo8 = new JTextField();
         lo8.setBounds(160, 194, 45, 17);
+        lo8.setText("00:00");
         
         JLabel day9 = new JLabel("Day  9 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day9.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -778,9 +798,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li9 = new JTextField();
         li9.setBounds(108, 214, 45, 17);
+        li9.setText("00:00");
         
         JTextField lo9 = new JTextField();
         lo9.setBounds(160, 214, 45, 17);
+        lo9.setText("00:00");
         
         JLabel day10 = new JLabel("Day 10 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day10.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -792,9 +814,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li10 = new JTextField();
         li10.setBounds(108, 234, 45, 17);
+        li10.setText("00:00");
         
         JTextField lo10 = new JTextField();
         lo10.setBounds(160, 234, 45, 17);
+        lo10.setText("00:00");
         
         JLabel day11 = new JLabel("Day 11 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day11.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -806,9 +830,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li11 = new JTextField();
         li11.setBounds(108, 254, 45, 17);
+        li11.setText("00:00");
         
         JTextField lo11 = new JTextField();
         lo11.setBounds(160, 254, 45, 17);
+        lo11.setText("00:00");
         
         JLabel login2 = new JLabel("Login:"); // creates a label to be added inside frameTitleP panel
         login2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -836,9 +862,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li12 = new JTextField();
         li12.setBounds(328, 54, 45, 17);
+        li12.setText("00:00");
         
         JTextField lo12 = new JTextField();
         lo12.setBounds(380, 54, 45, 17);
+        lo12.setText("00:00");
         
         JLabel day13 = new JLabel("Day 13 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day13.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -850,9 +878,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li13 = new JTextField();
         li13.setBounds(328, 74, 45, 17);
+        li13.setText("00:00");
         
         JTextField lo13 = new JTextField();
         lo13.setBounds(380, 74, 45, 17);
+        lo13.setText("00:00");
         
         JLabel day14 = new JLabel("Day 14 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day14.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -864,9 +894,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li14 = new JTextField();
         li14.setBounds(328, 94, 45, 17);
+        li14.setText("00:00");
         
         JTextField lo14 = new JTextField();
         lo14.setBounds(380, 94, 45, 17);
+        lo14.setText("00:00");
         
         JLabel day15 = new JLabel("Day 15 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day15.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -878,9 +910,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li15 = new JTextField();
         li15.setBounds(328, 114, 45, 17);
+        li15.setText("00:00");
         
         JTextField lo15 = new JTextField();
         lo15.setBounds(380, 114, 45, 17);
+        lo15.setText("00:00");
         
         JLabel day16 = new JLabel("Day 16 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day16.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -892,9 +926,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li16 = new JTextField();
         li16.setBounds(328, 134, 45, 17);
+        li16.setText("00:00");
         
         JTextField lo16 = new JTextField();
         lo16.setBounds(380, 134, 45, 17);
+        lo16.setText("00:00");
         
         JLabel day17 = new JLabel("Day 17 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day17.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -906,9 +942,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li17 = new JTextField();
         li17.setBounds(328, 154, 45, 17);
+        li17.setText("00:00");
         
         JTextField lo17 = new JTextField();
         lo17.setBounds(380, 154, 45, 17);
+        lo17.setText("00:00");
         
         JLabel day18 = new JLabel("Day 18 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day18.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -920,9 +958,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li18 = new JTextField();
         li18.setBounds(328, 174, 45, 17);
+        li18.setText("00:00");
         
         JTextField lo18 = new JTextField();
         lo18.setBounds(380, 174, 45, 17);
+        lo18.setText("00:00");
         
         JLabel day19 = new JLabel("Day 19 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day19.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -934,9 +974,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li19 = new JTextField();
         li19.setBounds(328, 194, 45, 17);
+        li19.setText("00:00");
         
         JTextField lo19 = new JTextField();
         lo19.setBounds(380, 194, 45, 17);
+        lo19.setText("00:00");
         
         JLabel day20 = new JLabel("Day 20 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day20.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -948,9 +990,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li20 = new JTextField();
         li20.setBounds(328, 214, 45, 17);
+        li20.setText("00:00");
         
         JTextField lo20 = new JTextField();
         lo20.setBounds(380, 214, 45, 17);
+        lo20.setText("00:00");
         
         JLabel day21 = new JLabel("Day 21 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day21.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -962,9 +1006,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li21 = new JTextField();
         li21.setBounds(328, 234, 45, 17);
+        li21.setText("00:00");
         
         JTextField lo21 = new JTextField();
         lo21.setBounds(380, 234, 45, 17);
+        lo21.setText("00:00");
         
         JLabel day22 = new JLabel("Day 22 (HH:MM):"); // creates a label to be added inside frameTitleP panel
         day22.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -976,9 +1022,11 @@ public class ComputeSalary extends JFrame{
         
         JTextField li22 = new JTextField();
         li22.setBounds(328, 254, 45, 17);
+        li22.setText("00:00");
         
         JTextField lo22 = new JTextField();
         lo22.setBounds(380, 254, 45, 17);
+        lo22.setText("00:00");
         
         JLabel lunchDed = new JLabel("Enter Number of Days with 1 hour Lunch Deduction: "); // creates a label to be added inside frameTitleP panel
         lunchDed.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -990,6 +1038,7 @@ public class ComputeSalary extends JFrame{
         
         JTextField lunchDur = new JTextField();
         lunchDur.setBounds(380, 284, 45, 17);
+        lunchDur.setText("0");
         
         JLabel adjEarnings3 = new JLabel("Enter amount of adjustment on Taxable Earnings:"); // creates a label to be added inside frameTitleP panel
         adjEarnings3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1001,6 +1050,7 @@ public class ComputeSalary extends JFrame{
         
         JTextField adjEarning3 = new JTextField();
         adjEarning3.setBounds(380, 304, 45, 17);
+        adjEarning3.setText("0");
        
         JLabel otRate3 = new JLabel("Enter overtime rate in decimal form (sample 1.25 for 125%):"); // creates a label to be added inside frameTitleP panel
         otRate3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1012,6 +1062,7 @@ public class ComputeSalary extends JFrame{
 
         JTextField otPay3 = new JTextField();
         otPay3.setBounds(380, 324, 45, 17);
+        otPay3.setText("0");
         
         
         
@@ -1043,6 +1094,7 @@ public class ComputeSalary extends JFrame{
         
         JTextField adjBene3 = new JTextField();
         adjBene3.setBounds(380, 429, 45, 17);
+        adjBene3.setText("0");
         
         JButton calculate3 = new JButton("Calculate");
         calculate3.setBounds(225, 460, 150, 20);
@@ -1055,7 +1107,7 @@ public class ComputeSalary extends JFrame{
         grossTaxable3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         grossTaxable3.setBounds(5, 495, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel grossTaxabl3 = new JLabel("Gross"); // creates a label to be added inside frameTitleP panel
+        JLabel grossTaxabl3 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         grossTaxabl3.setForeground(new Color(0x0E3171)); // sets the font color of the text
         grossTaxabl3.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         grossTaxabl3.setOpaque(true); // this will display background color
@@ -1071,7 +1123,7 @@ public class ComputeSalary extends JFrame{
         adjTaxable3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         adjTaxable3.setBounds(5, 515, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel adjTaxabl3 = new JLabel("G Adj"); // creates a label to be added inside frameTitleP panel
+        JLabel adjTaxabl3 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         adjTaxabl3.setForeground(new Color(0x0E3171)); // sets the font color of the text
         adjTaxabl3.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         adjTaxabl3.setOpaque(true); // this will display background color
@@ -1087,7 +1139,7 @@ public class ComputeSalary extends JFrame{
         sss3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         sss3.setBounds(5, 535, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel sssDed3 = new JLabel("SSS Ded"); // creates a label to be added inside frameTitleP panel
+        JLabel sssDed3 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         sssDed3.setForeground(new Color(0x0E3171)); // sets the font color of the text
         sssDed3.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         sssDed3.setOpaque(true); // this will display background color
@@ -1103,7 +1155,7 @@ public class ComputeSalary extends JFrame{
         philH3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         philH3.setBounds(5, 555, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel philDed3 = new JLabel("Phil Ded"); // creates a label to be added inside frameTitleP panel
+        JLabel philDed3 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         philDed3.setForeground(new Color(0x0E3171)); // sets the font color of the text
         philDed3.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         philDed3.setOpaque(true); // this will display background color
@@ -1119,7 +1171,7 @@ public class ComputeSalary extends JFrame{
         pagIbg3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         pagIbg3.setBounds(5, 575, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel pagIbgDed3 = new JLabel("PagIbgDed Ded"); // creates a label to be added inside frameTitleP panel
+        JLabel pagIbgDed3 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         pagIbgDed3.setForeground(new Color(0x0E3171)); // sets the font color of the text
         pagIbgDed3.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         pagIbgDed3.setOpaque(true); // this will display background color
@@ -1135,7 +1187,7 @@ public class ComputeSalary extends JFrame{
         withholding3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         withholding3.setBounds(5, 595, 190, 15); // sets the position of the entire label on the frame
         
-        JLabel withholdingDed3 = new JLabel("Witholding Tax Ded"); // creates a label to be added inside frameTitleP panel
+        JLabel withholdingDed3 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         withholdingDed3.setForeground(new Color(0x0E3171)); // sets the font color of the text
         withholdingDed3.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         withholdingDed3.setOpaque(true); // this will display background color
@@ -1151,7 +1203,7 @@ public class ComputeSalary extends JFrame{
         benefitsL3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         benefitsL3.setBounds(310, 495, 210, 15); // sets the position of the entire label on the frame
         
-        JLabel benefitsPay3 = new JLabel("Bene"); // creates a label to be added inside frameTitleP panel
+        JLabel benefitsPay3 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         benefitsPay3.setForeground(new Color(0x0E3171)); // sets the font color of the text
         benefitsPay3.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         benefitsPay3.setOpaque(true); // this will display background color
@@ -1167,7 +1219,7 @@ public class ComputeSalary extends JFrame{
         benefitsAdjL3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         benefitsAdjL3.setBounds(310, 515, 210, 15); // sets the position of the entire label on the frame
         
-        JLabel benefitsAdjDed3 = new JLabel("Bene Adj"); // creates a label to be added inside frameTitleP panel
+        JLabel benefitsAdjDed3 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         benefitsAdjDed3.setForeground(new Color(0x0E3171)); // sets the font color of the text
         benefitsAdjDed3.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         benefitsAdjDed3.setOpaque(true); // this will display background color
@@ -1183,7 +1235,7 @@ public class ComputeSalary extends JFrame{
         netPayL3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         netPayL3.setBounds(310, 555, 210, 15); // sets the position of the entire label on the frame
         
-        JLabel netPay3 = new JLabel("Net"); // creates a label to be added inside frameTitleP panel
+        JLabel netPay3 = new JLabel(" "); // creates a label to be added inside frameTitleP panel
         netPay3.setForeground(new Color(0x0E3171)); // sets the font color of the text
         netPay3.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
         netPay3.setOpaque(true); // this will display background color
