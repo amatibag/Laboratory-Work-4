@@ -502,7 +502,7 @@ public class ComputeSalary extends JFrame{
         grossTaxabl2.setOpaque(true); // this will display background color
         grossTaxabl2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         grossTaxabl2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        grossTaxabl2.setBounds(210, 494, 50, 17); // sets the position of the entire label on the frame
+        grossTaxabl2.setBounds(210, 494, 60, 17); // sets the position of the entire label on the frame
         
         JLabel adjTaxable2 = new JLabel("Taxable Earnings Adjustment: "); // creates a label to be added inside frameTitleP panel
         adjTaxable2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -518,7 +518,7 @@ public class ComputeSalary extends JFrame{
         adjTaxabl2.setOpaque(true); // this will display background color
         adjTaxabl2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         adjTaxabl2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        adjTaxabl2.setBounds(210, 514, 50, 17); // sets the position of the entire label on the frame
+        adjTaxabl2.setBounds(210, 514, 60, 17); // sets the position of the entire label on the frame
         
         JLabel sss2 = new JLabel("SSS Deduction: "); // creates a label to be added inside frameTitleP panel
         sss2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -534,7 +534,7 @@ public class ComputeSalary extends JFrame{
         sssDed2.setOpaque(true); // this will display background color
         sssDed2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         sssDed2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        sssDed2.setBounds(210, 534, 50, 17); // sets the position of the entire label on the frame
+        sssDed2.setBounds(210, 534, 60, 17); // sets the position of the entire label on the frame
         
         JLabel philH2 = new JLabel("PhilHealth Deduction: "); // creates a label to be added inside frameTitleP panel
         philH2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -550,7 +550,7 @@ public class ComputeSalary extends JFrame{
         philDed2.setOpaque(true); // this will display background color
         philDed2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         philDed2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        philDed2.setBounds(210, 554, 50, 17); // sets the position of the entire label on the frame
+        philDed2.setBounds(210, 554, 60, 17); // sets the position of the entire label on the frame
         
         JLabel pagIbg2 = new JLabel("PagIbig Deduction: "); // creates a label to be added inside frameTitleP panel
         pagIbg2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -566,7 +566,7 @@ public class ComputeSalary extends JFrame{
         pagIbgDed2.setOpaque(true); // this will display background color
         pagIbgDed2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         pagIbgDed2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        pagIbgDed2.setBounds(210, 574, 50, 17); // sets the position of the entire label on the frame
+        pagIbgDed2.setBounds(210, 574, 60, 17); // sets the position of the entire label on the frame
         
         JLabel withholding2 = new JLabel("Witholding Tax Deduction: "); // creates a label to be added inside frameTitleP panel
         withholding2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -582,7 +582,7 @@ public class ComputeSalary extends JFrame{
         withholdingDed2.setOpaque(true); // this will display background color
         withholdingDed2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         withholdingDed2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        withholdingDed2.setBounds(210, 594, 50, 17); // sets the position of the entire label on the frame
+        withholdingDed2.setBounds(210, 594, 60, 17); // sets the position of the entire label on the frame
         
         JLabel benefitsL2 = new JLabel("Non-Taxable Benefits Pay: "); // creates a label to be added inside frameTitleP panel
         benefitsL2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -598,7 +598,7 @@ public class ComputeSalary extends JFrame{
         benefitsPay2.setOpaque(true); // this will display background color
         benefitsPay2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         benefitsPay2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        benefitsPay2.setBounds(525, 494, 50, 17); // sets the position of the entire label on the frame
+        benefitsPay2.setBounds(525, 494, 60, 17); // sets the position of the entire label on the frame
         
         JLabel benefitsAdjL2 = new JLabel("Non-Taxable Benefits Adjustment: "); // creates a label to be added inside frameTitleP panel
         benefitsAdjL2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -614,7 +614,7 @@ public class ComputeSalary extends JFrame{
         benefitsAdjDed2.setOpaque(true); // this will display background color
         benefitsAdjDed2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         benefitsAdjDed2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        benefitsAdjDed2.setBounds(525, 514, 50, 17); // sets the position of the entire label on the frame
+        benefitsAdjDed2.setBounds(525, 514, 60, 17); // sets the position of the entire label on the frame
         
         JLabel netPayL2 = new JLabel("Net Pay: "); // creates a label to be added inside frameTitleP panel
         netPayL2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -630,10 +630,62 @@ public class ComputeSalary extends JFrame{
         netPay2.setOpaque(true); // this will display background color
         netPay2.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         netPay2.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        netPay2.setBounds(525, 554, 50, 17); // sets the position of the entire label on the frame
+        netPay2.setBounds(525, 554, 60, 17); // sets the position of the entire label on the frame
         
         JButton submit2 = new JButton("Submit for Payroll");
         submit2.setBounds(225, 625, 150, 20);
+        
+        calculate2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    // Retrieve input values
+                    double otRate = Double.parseDouble(otPay2.getText());
+                    double otHours = Double.parseDouble(otDur2.getText());
+                    double adjEarnings = Double.parseDouble(adjEarning2.getText());
+                    double benefitsAdjustment = Double.parseDouble(adjBene2.getText());
+                    double semiMonthlySalary = Double.parseDouble(rowData[17]);
+                    double riceSubsidyP = Double.parseDouble(rowData[14]); 
+                    double phoneAllowanceP = Double.parseDouble(rowData[15]); 
+                    double clothingAllowanceP = Double.parseDouble(rowData[16]);
+                    double hourlyRate = Double.parseDouble(rowData[18]);
+
+                    // Perform calculations
+                    double overtimeEarnings = PayrollCalculation.calculateOvertimeEarnings(otRate, hourlyRate, otHours);
+                    double taxableEarnings = PayrollCalculation.calculateTaxableEarnings(semiMonthlySalary, adjEarnings);
+                    double netGross = PayrollCalculation.calculateNetGross(overtimeEarnings, taxableEarnings);
+                    double sssDeduction = PayrollCalculation.calculateSSS(netGross);
+                    double philHealthDeduction = PayrollCalculation.calculatePhilHealth(netGross);
+                    double pagIbigDeduction = PayrollCalculation.calculatePagibig(netGross);
+                    double taxableIncome = netGross - (sssDeduction + philHealthDeduction + pagIbigDeduction);
+                    double witholdingTax = PayrollCalculation.calculateWitholdingTax(taxableIncome);
+                    double nettaxedEarnings = taxableIncome - witholdingTax;
+
+                    // Display results
+                    grossTaxabl2.setText(String.format("%.2f", netGross));
+                    adjTaxabl2.setText(String.format("%.2f", adjEarnings));
+                    sssDed2.setText(String.format("%.2f", sssDeduction));
+                    philDed2.setText(String.format("%.2f", philHealthDeduction));
+                    pagIbgDed2.setText(String.format("%.2f", pagIbigDeduction));
+                    withholdingDed2.setText(String.format("%.2f", witholdingTax));
+                    
+                    if (benefits1.isSelected()) {
+                    double totalBenefits = riceSubsidyP + phoneAllowanceP + clothingAllowanceP;
+                    double netWben = nettaxedEarnings + totalBenefits + benefitsAdjustment;
+                    benefitsPay2.setText(String.format("%.2f", totalBenefits));
+                    benefitsAdjDed2.setText(String.format("%.2f", benefitsAdjustment));
+                    netPay2.setText(String.format("%.2f", netWben));
+                    
+            }else{
+                        
+                    netPay2.setText(String.format("%.2f", nettaxedEarnings));}
+
+                    // Add other calculations and display logic here
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Please enter valid numbers.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
         
         //tab3 content:
         JLabel header3 = new JLabel("<html><u>Calculate salary based on Hourly Rate:</u></html>");
@@ -1113,7 +1165,7 @@ public class ComputeSalary extends JFrame{
         grossTaxabl3.setOpaque(true); // this will display background color
         grossTaxabl3.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         grossTaxabl3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        grossTaxabl3.setBounds(210, 494, 50, 17); // sets the position of the entire label on the frame
+        grossTaxabl3.setBounds(210, 494, 60, 17); // sets the position of the entire label on the frame
         
         JLabel adjTaxable3 = new JLabel("Taxable Earnings Adjustment: "); // creates a label to be added inside frameTitleP panel
         adjTaxable3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1129,7 +1181,7 @@ public class ComputeSalary extends JFrame{
         adjTaxabl3.setOpaque(true); // this will display background color
         adjTaxabl3.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         adjTaxabl3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        adjTaxabl3.setBounds(210, 514, 50, 17); // sets the position of the entire label on the frame
+        adjTaxabl3.setBounds(210, 514, 60, 17); // sets the position of the entire label on the frame
         
         JLabel sss3 = new JLabel("SSS Deduction: "); // creates a label to be added inside frameTitleP panel
         sss3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1145,7 +1197,7 @@ public class ComputeSalary extends JFrame{
         sssDed3.setOpaque(true); // this will display background color
         sssDed3.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         sssDed3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        sssDed3.setBounds(210, 534, 50, 17); // sets the position of the entire label on the frame
+        sssDed3.setBounds(210, 534, 60, 17); // sets the position of the entire label on the frame
         
         JLabel philH3 = new JLabel("PhilHealth Deduction: "); // creates a label to be added inside frameTitleP panel
         philH3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1161,7 +1213,7 @@ public class ComputeSalary extends JFrame{
         philDed3.setOpaque(true); // this will display background color
         philDed3.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         philDed3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        philDed3.setBounds(210, 554, 50, 17); // sets the position of the entire label on the frame
+        philDed3.setBounds(210, 554, 60, 17); // sets the position of the entire label on the frame
         
         JLabel pagIbg3 = new JLabel("PagIbig Deduction: "); // creates a label to be added inside frameTitleP panel
         pagIbg3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1177,7 +1229,7 @@ public class ComputeSalary extends JFrame{
         pagIbgDed3.setOpaque(true); // this will display background color
         pagIbgDed3.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         pagIbgDed3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        pagIbgDed3.setBounds(210, 574, 50, 17); // sets the position of the entire label on the frame
+        pagIbgDed3.setBounds(210, 574, 60, 17); // sets the position of the entire label on the frame
         
         JLabel withholding3 = new JLabel("Witholding Tax Deduction: "); // creates a label to be added inside frameTitleP panel
         withholding3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1193,7 +1245,7 @@ public class ComputeSalary extends JFrame{
         withholdingDed3.setOpaque(true); // this will display background color
         withholdingDed3.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         withholdingDed3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        withholdingDed3.setBounds(210, 594, 50, 17); // sets the position of the entire label on the frame
+        withholdingDed3.setBounds(210, 594, 60, 17); // sets the position of the entire label on the frame
         
         JLabel benefitsL3 = new JLabel("Non-Taxable Benefits Pay: "); // creates a label to be added inside frameTitleP panel
         benefitsL3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1209,7 +1261,7 @@ public class ComputeSalary extends JFrame{
         benefitsPay3.setOpaque(true); // this will display background color
         benefitsPay3.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         benefitsPay3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        benefitsPay3.setBounds(525, 494, 50, 17); // sets the position of the entire label on the frame
+        benefitsPay3.setBounds(525, 494, 60, 17); // sets the position of the entire label on the frame
         
         JLabel benefitsAdjL3 = new JLabel("Non-Taxable Benefits Adjustment: "); // creates a label to be added inside frameTitleP panel
         benefitsAdjL3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1225,7 +1277,7 @@ public class ComputeSalary extends JFrame{
         benefitsAdjDed3.setOpaque(true); // this will display background color
         benefitsAdjDed3.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         benefitsAdjDed3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        benefitsAdjDed3.setBounds(525, 514, 50, 17); // sets the position of the entire label on the frame
+        benefitsAdjDed3.setBounds(525, 514, 60, 17); // sets the position of the entire label on the frame
         
         JLabel netPayL3 = new JLabel("Net Pay: "); // creates a label to be added inside frameTitleP panel
         netPayL3.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -1241,7 +1293,7 @@ public class ComputeSalary extends JFrame{
         netPay3.setOpaque(true); // this will display background color
         netPay3.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
         netPay3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
-        netPay3.setBounds(525, 554, 50, 17); // sets the position of the entire label on the frame
+        netPay3.setBounds(525, 554, 60, 17); // sets the position of the entire label on the frame
         
         JButton submit3 = new JButton("Submit for Payroll");
         submit3.setBounds(225, 625, 150, 20);
