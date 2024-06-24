@@ -4,6 +4,7 @@
  */
 package motorph_mphcr.pkg01_g3;
 
+
 /**
  *
  * @author amatibag
@@ -113,5 +114,5 @@ public class PayrollCalculation {
         wTax = Math.round(wTax*100.0)/100.0;
         return wTax;
     }
-}
 
+}

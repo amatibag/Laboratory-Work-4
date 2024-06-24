@@ -24,6 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
+
 /**
  *
  * @author amatibag
@@ -1295,8 +1296,138 @@ public class ComputeSalary extends JFrame{
         netPay3.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
         netPay3.setBounds(525, 554, 60, 17); // sets the position of the entire label on the frame
         
+        JLabel regularHr = new JLabel("Regular Hours: "); // creates a label to be added inside frameTitleP panel
+        regularHr.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        regularHr.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        regularHr.setOpaque(true); // this will display background color
+        regularHr.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        regularHr.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        regularHr.setBounds(320, 575, 200, 15); // sets the position of the entire label on the frame
+        
+        JLabel regHr = new JLabel(" "); // creates a label to be added inside frameTitleP panel
+        regHr.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        regHr.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        regHr.setOpaque(true); // this will display background color
+        regHr.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        regHr.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        regHr.setBounds(525, 574, 60, 17); // sets the position of the entire label on the frame
+        
+        JLabel otHr = new JLabel("Overtime Hours: "); // creates a label to be added inside frameTitleP panel
+        otHr.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        otHr.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        otHr.setOpaque(true); // this will display background color
+        otHr.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        otHr.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        otHr.setBounds(320, 595, 200, 15); // sets the position of the entire label on the frame
+        
+        JLabel overTHr = new JLabel(" "); // creates a label to be added inside frameTitleP panel
+        overTHr.setForeground(new Color(0x0E3171)); // sets the font color of the text
+        overTHr.setFont(new Font("Arial", Font.BOLD, 12)); // sets the font of the text
+        overTHr.setOpaque(true); // this will display background color
+        overTHr.setVerticalAlignment(JLabel.CENTER); // sets the Vertical position of the frameTitleL (icon + Text)
+        overTHr.setHorizontalAlignment(JLabel.LEFT); // sets the Horizontal position of the frameTitleL (icon + Text)
+        overTHr.setBounds(525, 594, 60, 17); // sets the position of the entire label on the frame
+        
         JButton submit3 = new JButton("Submit for Payroll");
         submit3.setBounds(225, 625, 150, 20);
+        
+        calculate3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                String loginTime1 = li1.getText();String loginTime2 = li2.getText();String loginTime3 = li3.getText();String loginTime4 = li4.getText();String loginTime5 = li5.getText();
+                String loginTime6 = li6.getText();String loginTime7 = li7.getText();String loginTime8 = li8.getText();String loginTime9 = li9.getText();String loginTime10 = li10.getText();
+                String loginTime11 = li11.getText();String loginTime12 = li12.getText();String loginTime13 = li13.getText();String loginTime14 = li14.getText();String loginTime15 = li15.getText();
+                String loginTime16 = li16.getText();String loginTime17 = li17.getText();String loginTime18 = li18.getText();String loginTime19 = li19.getText();String loginTime20 = li20.getText();
+                String loginTime21 = li21.getText();String loginTime22 = li22.getText();
+                String logoutTime1 = lo1.getText();String logoutTime2 = lo2.getText();String logoutTime3 = lo3.getText();String logoutTime4 = lo4.getText();String logoutTime5 = lo5.getText();
+                String logoutTime6 = lo6.getText();String logoutTime7 = lo7.getText();String logoutTime8 = lo8.getText();String logoutTime9 = lo9.getText();String logoutTime10 = lo10.getText();
+                String logoutTime11 = lo11.getText();String logoutTime12 = lo12.getText();String logoutTime13 = lo13.getText();String logoutTime14 = lo14.getText();String logoutTime15 = lo15.getText();
+                String logoutTime16 = lo16.getText();String logoutTime17 = lo17.getText();String logoutTime18 = lo18.getText();String logoutTime19 = lo19.getText();String logoutTime20 = lo20.getText();
+                String logoutTime21 = lo21.getText();String logoutTime22 = lo22.getText();
+
+                // Calculate hours using TimeCalculator class
+                double totalHours1 = TimeCalculator.calculateTotalHours(loginTime1, logoutTime1);double totalHours2 = TimeCalculator.calculateTotalHours(loginTime2, logoutTime2);
+                double totalHours3 = TimeCalculator.calculateTotalHours(loginTime3, logoutTime3);double totalHours4 = TimeCalculator.calculateTotalHours(loginTime4, logoutTime4);
+                double totalHours5 = TimeCalculator.calculateTotalHours(loginTime5, logoutTime5);double totalHours6 = TimeCalculator.calculateTotalHours(loginTime6, logoutTime6);
+                double totalHours7 = TimeCalculator.calculateTotalHours(loginTime7, logoutTime7);double totalHours8 = TimeCalculator.calculateTotalHours(loginTime8, logoutTime8);
+                double totalHours9 = TimeCalculator.calculateTotalHours(loginTime9, logoutTime9);double totalHours10 = TimeCalculator.calculateTotalHours(loginTime10, logoutTime10);
+                double totalHours11 = TimeCalculator.calculateTotalHours(loginTime11, logoutTime11);double totalHours12 = TimeCalculator.calculateTotalHours(loginTime12, logoutTime12);
+                double totalHours13 = TimeCalculator.calculateTotalHours(loginTime13, logoutTime13);double totalHours14 = TimeCalculator.calculateTotalHours(loginTime14, logoutTime14);
+                double totalHours15 = TimeCalculator.calculateTotalHours(loginTime15, logoutTime15);double totalHours16 = TimeCalculator.calculateTotalHours(loginTime16, logoutTime16);
+                double totalHours17 = TimeCalculator.calculateTotalHours(loginTime17, logoutTime17);double totalHours18 = TimeCalculator.calculateTotalHours(loginTime18, logoutTime18);
+                double totalHours19 = TimeCalculator.calculateTotalHours(loginTime19, logoutTime19);double totalHours20 = TimeCalculator.calculateTotalHours(loginTime20, logoutTime20);
+                double totalHours21 = TimeCalculator.calculateTotalHours(loginTime21, logoutTime21);double totalHours22 = TimeCalculator.calculateTotalHours(loginTime22, logoutTime22);
+                
+                double overtimeHours1 = TimeCalculator.calculateOvertimeHours(loginTime1, logoutTime1);double overtimeHours2 = TimeCalculator.calculateOvertimeHours(loginTime2, logoutTime2);
+                double overtimeHours3 = TimeCalculator.calculateOvertimeHours(loginTime3, logoutTime3);double overtimeHours4 = TimeCalculator.calculateOvertimeHours(loginTime4, logoutTime4);
+                double overtimeHours5 = TimeCalculator.calculateOvertimeHours(loginTime5, logoutTime5);double overtimeHours6 = TimeCalculator.calculateOvertimeHours(loginTime6, logoutTime6);
+                double overtimeHours7 = TimeCalculator.calculateOvertimeHours(loginTime7, logoutTime7);double overtimeHours8 = TimeCalculator.calculateOvertimeHours(loginTime8, logoutTime8);
+                double overtimeHours9 = TimeCalculator.calculateOvertimeHours(loginTime9, logoutTime9);double overtimeHours10 = TimeCalculator.calculateOvertimeHours(loginTime10, logoutTime10);
+                double overtimeHours11 = TimeCalculator.calculateOvertimeHours(loginTime11, logoutTime11);double overtimeHours12 = TimeCalculator.calculateOvertimeHours(loginTime12, logoutTime12);
+                double overtimeHours13 = TimeCalculator.calculateOvertimeHours(loginTime13, logoutTime13);double overtimeHours14 = TimeCalculator.calculateOvertimeHours(loginTime14, logoutTime14);
+                double overtimeHours15 = TimeCalculator.calculateOvertimeHours(loginTime15, logoutTime15);double overtimeHours16 = TimeCalculator.calculateOvertimeHours(loginTime16, logoutTime16);
+                double overtimeHours17 = TimeCalculator.calculateOvertimeHours(loginTime17, logoutTime17);double overtimeHours18 = TimeCalculator.calculateOvertimeHours(loginTime18, logoutTime18);
+                double overtimeHours19 = TimeCalculator.calculateOvertimeHours(loginTime19, logoutTime19);double overtimeHours20 = TimeCalculator.calculateOvertimeHours(loginTime20, logoutTime20);
+                double overtimeHours21 = TimeCalculator.calculateOvertimeHours(loginTime21, logoutTime21);double overtimeHours22 = TimeCalculator.calculateOvertimeHours(loginTime22, logoutTime22);
+                
+                double allHours = totalHours1 + totalHours2 + totalHours3 + totalHours4 + totalHours5 + totalHours6 + totalHours7 + totalHours8 + totalHours9 + totalHours10 + totalHours11 +
+                        totalHours12 + totalHours13 + totalHours14 + totalHours15 + totalHours16 + totalHours17 + totalHours18 + totalHours19 + totalHours20 + totalHours21 + totalHours22;
+                
+                 double allOT = overtimeHours1 + overtimeHours2 + overtimeHours3 + overtimeHours4 + overtimeHours5 + overtimeHours6 + overtimeHours7 + overtimeHours8 + overtimeHours9 + overtimeHours10 + overtimeHours11 +
+                        overtimeHours12 + overtimeHours13 + overtimeHours14 + overtimeHours15 + overtimeHours16 + overtimeHours17 + overtimeHours18 + overtimeHours19 + overtimeHours20 + overtimeHours21 + overtimeHours22;
+                
+                double otHoursLessLunch = allOT - Double.parseDouble(lunchDur.getText());
+                double regularHours = allHours - (otHoursLessLunch + Double.parseDouble(lunchDur.getText()));
+                
+                    // Retrieve input values
+                    double otRate = Double.parseDouble(otPay3.getText());
+                    double adjEarnings = Double.parseDouble(adjEarning3.getText());
+                    double benefitsAdjustment = Double.parseDouble(adjBene3.getText());
+                    double riceSubsidyP = Double.parseDouble(rowData[14]); 
+                    double phoneAllowanceP = Double.parseDouble(rowData[15]); 
+                    double clothingAllowanceP = Double.parseDouble(rowData[16]);
+                    double hourlyRate = Double.parseDouble(rowData[18]);
+
+                    // Perform calculations
+                    double overtimeEarnings = PayrollCalculation.calculateOvertimeEarnings(otRate, hourlyRate, otHoursLessLunch);
+                    double regularEarnings = regularHours * hourlyRate;
+                    double taxableEarnings = PayrollCalculation.calculateTaxableEarnings(regularEarnings, adjEarnings);
+                    double netGross = PayrollCalculation.calculateNetGross(overtimeEarnings, taxableEarnings);
+                    double sssDeduction = PayrollCalculation.calculateSSS(netGross);
+                    double philHealthDeduction = PayrollCalculation.calculatePhilHealth(netGross);
+                    double pagIbigDeduction = PayrollCalculation.calculatePagibig(netGross);
+                    double taxableIncome = netGross - (sssDeduction + philHealthDeduction + pagIbigDeduction);
+                    double witholdingTax = PayrollCalculation.calculateWitholdingTax(taxableIncome);
+                    double nettaxedEarnings = taxableIncome - witholdingTax;
+
+                    // Display results
+                    grossTaxabl3.setText(String.format("%.2f", netGross));
+                    adjTaxabl3.setText(String.format("%.2f", adjEarnings));
+                    sssDed3.setText(String.format("%.2f", sssDeduction));
+                    philDed3.setText(String.format("%.2f", philHealthDeduction));
+                    pagIbgDed3.setText(String.format("%.2f", pagIbigDeduction));
+                    withholdingDed3.setText(String.format("%.2f", witholdingTax));
+                    regHr.setText(String.format("%.2f", regularHours));
+                    overTHr.setText(String.format("%.2f", otHoursLessLunch));
+                    
+                    if (benefits3.isSelected()) {
+                    double totalBenefits = riceSubsidyP + phoneAllowanceP + clothingAllowanceP;
+                    double netWben = nettaxedEarnings + totalBenefits + benefitsAdjustment;
+                    benefitsPay3.setText(String.format("%.2f", totalBenefits));
+                    benefitsAdjDed3.setText(String.format("%.2f", benefitsAdjustment));
+                    netPay3.setText(String.format("%.2f", netWben));
+                    
+            }else{
+                        
+                    netPay3.setText(String.format("%.2f", nettaxedEarnings));}
+
+                    // Add other calculations and display logic here
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Please enter valid numbers.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
 
 
         // Create a tabbed pane
@@ -1359,7 +1490,7 @@ public class ComputeSalary extends JFrame{
         tab3.add(grossTaxable3);tab3.add(grossTaxabl3);tab3.add(adjTaxable3);tab3.add(adjTaxabl3);tab3.add(sss3);tab3.add(sssDed3);
         tab3.add(philDed3);tab3.add(philH3);tab3.add(pagIbgDed3);tab3.add(pagIbg3);tab3.add(withholdingDed3);tab3.add(withholding3);
         tab3.add(benefitsPay3);tab3.add(benefitsL3);tab3.add(benefitsAdjDed3);tab3.add(benefitsAdjL3);tab3.add(netPay3);tab3.add(netPayL3);tab3.add(submit3);
-                   
+        tab3.add(regularHr);tab3.add(regHr);tab3.add(otHr);tab3.add(overTHr);          
                   
         
 
