@@ -12,7 +12,13 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -409,6 +415,100 @@ public class ComputeSalary extends JFrame{
             }
         });
         
+     submit1.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        try {
+            // Ensure the year field is not blank
+            if (yr.getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Year cannot be blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Retrieve values from the inputs and calculated fields
+            String selectedMonth = (String) monthBox.getSelectedItem();
+            String year = yr.getText().trim();
+            String employeeID = rowData[0];
+            String employeeName = rowData[1] + "_" + rowData[2];
+            String netGrossStr = grossTaxabl1.getText();
+            String adjEarningsStr = adjTaxabl1.getText();
+            String sssDeductionStr = sssDed1.getText();
+            String philHealthDeductionStr = philDed1.getText();
+            String pagIbigDeductionStr = pagIbgDed1.getText();
+            String witholdingTaxStr = withholdingDed1.getText();
+            String totalBenefitsStr = benefitsPay1.getText();
+            String benefitsAdjustmentStr = benefitsAdjDed1.getText();
+            String netWbenStr = netPay1.getText();
+
+            // Prepare the data to be written to the CSV
+            String[] newData = {
+                selectedMonth,
+                year,
+                employeeID,
+                employeeName,
+                netGrossStr,
+                adjEarningsStr,
+                sssDeductionStr,
+                philHealthDeductionStr,
+                pagIbigDeductionStr,
+                witholdingTaxStr,
+                totalBenefitsStr,
+                benefitsAdjustmentStr,
+                netWbenStr
+            };
+
+            // Read existing data from the CSV file
+            List<String[]> csvData = new ArrayList<>();
+            String csvFile = "PaySummary.csv";
+            boolean entryExists = false;
+
+            try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] row = line.split(",");
+                    if (row.length > 3 && row[0].equals(selectedMonth) && row[1].equals(year)
+                        && row[2].equals(employeeID) && row[3].equals(employeeName)) {
+                        // If entry exists, replace it
+                        csvData.add(newData);
+                        entryExists = true;
+                    } else {
+                        csvData.add(row);
+                    }
+                }
+            } catch (IOException ioException) {
+                JOptionPane.showMessageDialog(null, "Error reading from file.", "File Error", JOptionPane.ERROR_MESSAGE);
+                ioException.printStackTrace();
+                return;
+            }
+
+            // If entry does not exist, add new entry
+            if (!entryExists) {
+                csvData.add(newData);
+            }
+
+            // Write updated data back to the CSV file
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile))) {
+                for (String[] row : csvData) {
+                    StringBuilder sb = new StringBuilder();
+                    for (String field : row) {
+                        sb.append(field).append(",");
+                    }
+                    sb.deleteCharAt(sb.length() - 1); // Remove trailing comma
+                    sb.append("\n");
+                    writer.write(sb.toString());
+                }
+                JOptionPane.showMessageDialog(null, "Payroll data submitted successfully.");
+            } catch (IOException ioException) {
+                JOptionPane.showMessageDialog(null, "Error writing to file.", "File Error", JOptionPane.ERROR_MESSAGE);
+                ioException.printStackTrace();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "An error occurred while processing the data.", "Error", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+    }
+});
+        
          //tab2 content:
         JLabel header2 = new JLabel("<html><u>Calculate salary based on Semi-Monthly Rate:</u></html>");
         header2.setForeground(new Color(0x0E3171)); // sets the font color of the text
@@ -687,6 +787,100 @@ public class ComputeSalary extends JFrame{
                 }
             }
         });
+        
+         submit2.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        try {
+            // Ensure the year field is not blank
+            if (yr.getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Year cannot be blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Retrieve values from the inputs and calculated fields
+            String selectedMonth = (String) monthBox.getSelectedItem();
+            String year = yr.getText().trim();
+            String employeeID = rowData[0];
+            String employeeName = rowData[1] + "_" + rowData[2];
+            String netGrossStr = grossTaxabl2.getText();
+            String adjEarningsStr = adjTaxabl2.getText();
+            String sssDeductionStr = sssDed2.getText();
+            String philHealthDeductionStr = philDed2.getText();
+            String pagIbigDeductionStr = pagIbgDed2.getText();
+            String witholdingTaxStr = withholdingDed2.getText();
+            String totalBenefitsStr = benefitsPay2.getText();
+            String benefitsAdjustmentStr = benefitsAdjDed2.getText();
+            String netWbenStr = netPay2.getText();
+
+            // Prepare the data to be written to the CSV
+            String[] newData = {
+                selectedMonth,
+                year,
+                employeeID,
+                employeeName,
+                netGrossStr,
+                adjEarningsStr,
+                sssDeductionStr,
+                philHealthDeductionStr,
+                pagIbigDeductionStr,
+                witholdingTaxStr,
+                totalBenefitsStr,
+                benefitsAdjustmentStr,
+                netWbenStr
+            };
+
+            // Read existing data from the CSV file
+            List<String[]> csvData = new ArrayList<>();
+            String csvFile = "PaySummary.csv";
+            boolean entryExists = false;
+
+            try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] row = line.split(",");
+                    if (row.length > 3 && row[0].equals(selectedMonth) && row[1].equals(year)
+                        && row[2].equals(employeeID) && row[3].equals(employeeName)) {
+                        // If entry exists, replace it
+                        csvData.add(newData);
+                        entryExists = true;
+                    } else {
+                        csvData.add(row);
+                    }
+                }
+            } catch (IOException ioException) {
+                JOptionPane.showMessageDialog(null, "Error reading from file.", "File Error", JOptionPane.ERROR_MESSAGE);
+                ioException.printStackTrace();
+                return;
+            }
+
+            // If entry does not exist, add new entry
+            if (!entryExists) {
+                csvData.add(newData);
+            }
+
+            // Write updated data back to the CSV file
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile))) {
+                for (String[] row : csvData) {
+                    StringBuilder sb = new StringBuilder();
+                    for (String field : row) {
+                        sb.append(field).append(",");
+                    }
+                    sb.deleteCharAt(sb.length() - 1); // Remove trailing comma
+                    sb.append("\n");
+                    writer.write(sb.toString());
+                }
+                JOptionPane.showMessageDialog(null, "Payroll data submitted successfully.");
+            } catch (IOException ioException) {
+                JOptionPane.showMessageDialog(null, "Error writing to file.", "File Error", JOptionPane.ERROR_MESSAGE);
+                ioException.printStackTrace();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "An error occurred while processing the data.", "Error", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+    }
+});
         
         //tab3 content:
         JLabel header3 = new JLabel("<html><u>Calculate salary based on Hourly Rate:</u></html>");
@@ -1428,6 +1622,100 @@ public class ComputeSalary extends JFrame{
                 }
             }
         });
+        
+        submit3.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        try {
+            // Ensure the year field is not blank
+            if (yr.getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Year cannot be blank.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Retrieve values from the inputs and calculated fields
+            String selectedMonth = (String) monthBox.getSelectedItem();
+            String year = yr.getText().trim();
+            String employeeID = rowData[0];
+            String employeeName = rowData[1] + "_" + rowData[2];
+            String netGrossStr = grossTaxabl3.getText();
+            String adjEarningsStr = adjTaxabl3.getText();
+            String sssDeductionStr = sssDed3.getText();
+            String philHealthDeductionStr = philDed3.getText();
+            String pagIbigDeductionStr = pagIbgDed3.getText();
+            String witholdingTaxStr = withholdingDed3.getText();
+            String totalBenefitsStr = benefitsPay3.getText();
+            String benefitsAdjustmentStr = benefitsAdjDed3.getText();
+            String netWbenStr = netPay3.getText();
+
+            // Prepare the data to be written to the CSV
+            String[] newData = {
+                selectedMonth,
+                year,
+                employeeID,
+                employeeName,
+                netGrossStr,
+                adjEarningsStr,
+                sssDeductionStr,
+                philHealthDeductionStr,
+                pagIbigDeductionStr,
+                witholdingTaxStr,
+                totalBenefitsStr,
+                benefitsAdjustmentStr,
+                netWbenStr
+            };
+
+            // Read existing data from the CSV file
+            List<String[]> csvData = new ArrayList<>();
+            String csvFile = "PaySummary.csv";
+            boolean entryExists = false;
+
+            try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] row = line.split(",");
+                    if (row.length > 3 && row[0].equals(selectedMonth) && row[1].equals(year)
+                        && row[2].equals(employeeID) && row[3].equals(employeeName)) {
+                        // If entry exists, replace it
+                        csvData.add(newData);
+                        entryExists = true;
+                    } else {
+                        csvData.add(row);
+                    }
+                }
+            } catch (IOException ioException) {
+                JOptionPane.showMessageDialog(null, "Error reading from file.", "File Error", JOptionPane.ERROR_MESSAGE);
+                ioException.printStackTrace();
+                return;
+            }
+
+            // If entry does not exist, add new entry
+            if (!entryExists) {
+                csvData.add(newData);
+            }
+
+            // Write updated data back to the CSV file
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile))) {
+                for (String[] row : csvData) {
+                    StringBuilder sb = new StringBuilder();
+                    for (String field : row) {
+                        sb.append(field).append(",");
+                    }
+                    sb.deleteCharAt(sb.length() - 1); // Remove trailing comma
+                    sb.append("\n");
+                    writer.write(sb.toString());
+                }
+                JOptionPane.showMessageDialog(null, "Payroll data submitted successfully.");
+            } catch (IOException ioException) {
+                JOptionPane.showMessageDialog(null, "Error writing to file.", "File Error", JOptionPane.ERROR_MESSAGE);
+                ioException.printStackTrace();
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "An error occurred while processing the data.", "Error", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+    }
+});
 
 
         // Create a tabbed pane
